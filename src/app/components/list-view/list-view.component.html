@@ -1,0 +1,20 @@
+<app-photo-grid
+  [photos]="photos()"
+  (onPhotoClickAction)="addToFavorites($event)"
+  [bottomOfGridTemplate]="bottomOfGridTemplate"
+></app-photo-grid>
+
+<ng-template #bottomOfGridTemplate let-photo>
+  <div
+    class="scroll-sentinel"
+    appInfiniteScroll
+    (scrolled)="loadMorePhotos()"
+  ></div>
+
+  <div class="spinner-container" *ngIf="isLoading">
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+  </div>
+</ng-template>

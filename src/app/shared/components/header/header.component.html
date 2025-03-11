@@ -1,0 +1,18 @@
+<mat-toolbar class="header-toolbar">
+  <button
+    mat-raised-button
+    color="primary"
+    [class.active]="isPhotosActive()"
+    (click)="navigate('/' + ROUTES.HOME)"
+  >
+    {{ BUTTONS_TEXT.PHOTOS }}
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    [class.active]="isFavoritesActive()"
+    (click)="navigate('/' + ROUTES.FAVORITES)"
+  >
+    {{ BUTTONS_TEXT.FAVORITES }}
+  </button>
+</mat-toolbar>

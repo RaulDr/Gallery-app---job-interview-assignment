@@ -1,0 +1,11 @@
+<div class="photo-grid-container">
+  <mat-grid-list [cols]="columns()" rowHeight="2:1" gutterSize="16px">
+    <mat-grid-tile
+      *ngFor="let photo of photos"
+      (click)="onPhotoClickAction.emit(photo)"
+    >
+      <app-photo-card [photo]="photo"></app-photo-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <ng-container *ngTemplateOutlet="bottomOfGridTemplate"></ng-container>
+</div>

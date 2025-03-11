@@ -1,0 +1,23 @@
+<ng-container *ngIf="photo; else placeholder">
+  <mat-card class="photo-card">
+    <img
+      mat-card-image
+      [src]="photo.url | imageSize: 800 : 600"
+      alt="Photo"
+    />
+    <mat-card-actions *ngIf="showRemoveButton">
+      <button mat-raised-button color="warn" (click)="onRemove()">
+        Remove
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
+
+<ng-template #placeholder>
+  <mat-card class="placeholder-card">
+    <img mat-card-image [src]="notFoundPhotoUrl| imageSize: 800 : 600" alt="Placeholder photo" />
+    <mat-card-content>
+      <p>Photo not found</p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
